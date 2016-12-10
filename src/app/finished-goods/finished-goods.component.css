@@ -51,4 +51,5 @@ p {
 }
 p.numba_month{font-size: 8px;  font-weight: bold;}
 p.numba input {border: none;}
+.table_title_div{border-bottom: 2px solid #000;}
 ul.table_title li{float: left; list-style:none;}
