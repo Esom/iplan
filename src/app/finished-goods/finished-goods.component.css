@@ -1,0 +1,54 @@
+.Table {
+    display: table;
+    position: relative;
+    left: -25%;
+}
+.Title
+{
+    display: table-caption;
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+}
+.Heading
+{
+    display: table-row;
+    text-align: center;
+    background: #ff7e00;
+}
+.Heading .Cell p{
+    font-size: 9px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.Heading .Cell{
+    border: none;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+.Row
+{
+    display: table-row;
+}
+.Cell
+{
+    display: table-cell;
+    border-width: thin;
+    border: 1px solid #fafafa;
+}
+.Cell.month{border:none !important;}
+p {
+    margin-bottom: 0.5rem;
+}
+.Cell .numba {
+    font-size: 11px;
+    padding: 5px;
+}
+.Row .Cell{
+    height: 10px;
+}
+p.numba_month{font-size: 8px;  font-weight: bold;}
+p.numba input {border: none;}
+ul.table_title li{float: left; list-style:none;}

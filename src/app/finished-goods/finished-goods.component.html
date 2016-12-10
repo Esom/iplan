@@ -1,0 +1,772 @@
+<div class="">
+    <ul class="table_title">
+        <li>Sales</li>
+        <li>Production</li>
+        <li>Inventory</li>
+    </ul>
+</div><br/><br/>
+<div class="container">
+    <div class="col-sm-6">
+        <div class="Table">
+            <div class="Title">
+            </div>
+            <div class="Heading">
+                <div class="Cell">
+                  <p>Month</p>
+                </div>
+                <div class="Cell">
+                    <p>Old Forecast[units]</p>
+                </div>
+                <div class="Cell">
+                    <p>New Forecast[units]</p>
+                </div>
+                <div class="Cell">
+                    <p>New Forecast[tons]</p>
+                </div>
+                <div class="Cell">
+                    <p>Realised[units]</p>
+                </div>
+                <div class="Cell">
+                    <p>Realised[tons]</p>
+                </div>
+                <div class="Cell">
+                    <p>Forecast realisation[%]</p>
+                </div>
+
+                <div class="Cell">
+                    <p>Old Forecast[units]</p>
+                </div>
+                <div class="Cell">
+                    <p>New Forecast[units]</p>
+                </div>
+                <div class="Cell">
+                    <p>New Forecast[tons]</p>
+                </div>
+                <div class="Cell">
+                    <p>Realised[units]</p>
+                </div>
+                <div class="Cell">
+                    <p>Realised[tons]</p>
+                </div>
+                <div class="Cell">
+                    <p>Forecast realisation[%]</p>
+                </div>
+
+                <div class="Cell">
+                    <p>Old Forecast[units]</p>
+                </div>
+                <div class="Cell">
+                    <p>New Forecast[units]</p>
+                </div>
+                <div class="Cell">
+                    <p>New Forecast[tons]</p>
+                </div>
+                <div class="Cell">
+                    <p>Realised[units]</p>
+                </div>
+                <div class="Cell">
+                    <p>Realised[tons]</p>
+                </div>
+                <div class="Cell">
+                    <p>Forecast realisation[%]</p>
+                </div>
+            </div>
+            <div class="Row">
+                <div class=" Cell month"><p class="numba_month">{{month}}</p></div>
+                <div class="Cell" contenteditable>
+                    <p class="numba"></p>
+                </div>
+                <div class="Cell">
+                    <p class="numba" contenteditable="">
+                    <input [value]="sales_new_forecast_units" type="number" (input)="setOldForecast($event.target.value)"></p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">{{sales_new_forecast_tons}}</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">{{sales_realised_units}}</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">{{sales_realised_tons}}</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">{{sales_forecast_realisation_units}}</p>
+                </div>
+                <div class="Cell" contenteditable>
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell" contenteditable>
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+            </div>
+
+            <!-- <div class="Row">
+                <div class=" Cell month"><p class="numba_month">Dec 2012</p></div>
+                <div class="Cell" contenteditable>
+                    <p class="numba"></p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell" contenteditable>
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell" contenteditable>
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+            </div>
+
+            <div class="Row">
+              <div class=" Cell month"><p class="numba_month">Nov 2012</p></div>
+                <div class="Cell" contenteditable>
+                    <p class="numba"></p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell" contenteditable>
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell" contenteditable>
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+            </div>
+
+            <div class="Row">
+                <div class=" Cell month"><p class="numba_month">Nov 2012</p></div>
+                <div class="Cell" contenteditable>
+                    <p class="numba"></p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell" contenteditable>
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell" contenteditable>
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+            </div>
+
+            <div class="Row">
+                <div class=" Cell month"><p class="numba_month">Dec 2012</p></div>
+                <div class="Cell" contenteditable>
+                    <p class="numba"></p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell" contenteditable>
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell" contenteditable>
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+            </div>
+
+            <div class="Row">
+              <div class=" Cell month"><p class="numba_month">Nov 2012</p></div>
+                <div class="Cell" contenteditable>
+                    <p class="numba"></p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell" contenteditable>
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell" contenteditable>
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+            </div>
+
+            <div class="Row">
+                <div class=" Cell month"><p class="numba_month">Nov 2012</p></div>
+                <div class="Cell" contenteditable>
+                    <p class="numba"></p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell" contenteditable>
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell" contenteditable>
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+            </div>
+
+            <div class="Row">
+                <div class=" Cell month"><p class="numba_month">Dec 2012</p></div>
+                <div class="Cell" contenteditable>
+                    <p class="numba"></p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell" contenteditable>
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell" contenteditable>
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+            </div>
+
+            <div class="Row">
+              <div class=" Cell month"><p class="numba_month">Nov 2012</p></div>
+                <div class="Cell" contenteditable>
+                    <p class="numba"></p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell" contenteditable>
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell" contenteditable>
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+            </div>
+
+            <div class="Row">
+                <div class=" Cell month"><p class="numba_month">Nov 2012</p></div>
+                <div class="Cell" contenteditable>
+                    <p class="numba"></p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell" contenteditable>
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell" contenteditable>
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+            </div>
+
+            <div class="Row">
+                <div class=" Cell month"><p class="numba_month">Dec 2012</p></div>
+                <div class="Cell" contenteditable>
+                    <p class="numba"></p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell" contenteditable>
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell" contenteditable>
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+            </div>
+
+            <div class="Row">
+              <div class=" Cell month"><p class="numba_month">Nov 2012</p></div>
+                <div class="Cell" contenteditable>
+                    <p class="numba"></p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell" contenteditable>
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell" contenteditable>
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">4563</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">1234</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">876</p>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>
