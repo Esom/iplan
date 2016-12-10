@@ -1,4 +1,4 @@
-<div class="">
+<div class="table_title_div">
     <ul class="table_title">
         <li>Sales</li>
         <li>Production</li>
@@ -53,32 +53,30 @@
                 </div>
 
                 <div class="Cell">
-                    <p>Old Forecast[units]</p>
+                    <p>Forecast[units]</p>
                 </div>
                 <div class="Cell">
-                    <p>New Forecast[units]</p>
+                    <p>Forecast[tons]</p>
                 </div>
                 <div class="Cell">
-                    <p>New Forecast[tons]</p>
+                    <p>Actual[units]</p>
                 </div>
                 <div class="Cell">
-                    <p>Realised[units]</p>
+                    <p>Actual[tons]</p>
                 </div>
                 <div class="Cell">
-                    <p>Realised[tons]</p>
-                </div>
-                <div class="Cell">
-                    <p>Forecast realisation[%]</p>
+                    <p>Month Supply[Month]</p>
                 </div>
             </div>
             <div class="Row">
                 <div class=" Cell month"><p class="numba_month">{{month}}</p></div>
+                <!-- sales table -->
                 <div class="Cell" contenteditable>
                     <p class="numba"></p>
                 </div>
                 <div class="Cell">
                     <p class="numba" contenteditable="">
-                    <input [value]="sales_new_forecast_units" type="number" (input)="setOldForecast($event.target.value)"></p>
+                    <input [value]="sales_new_forecast_units" type="number" (input)="setSalesNewForecast($event.target.value)"></p>
                 </div>
                 <div class="Cell">
                     <p class="numba">{{sales_new_forecast_tons}}</p>
@@ -90,7 +88,28 @@
                     <p class="numba">{{sales_realised_tons}}</p>
                 </div>
                 <div class="Cell">
-                    <p class="numba">{{sales_forecast_realisation_units}}</p>
+                    <p class="numba">{{sales_forecast_realisation}}</p>
+                </div>
+
+                <!-- production table -->
+                <div class="Cell" contenteditable>
+                    <p class="numba"></p>
+                </div>
+                <div class="Cell">
+                    <p class="numba" contenteditable="">
+                    <input [value]="production_new_forecast_units" type="number" (input)="setProductionNewForecast($event.target.value)"></p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">{{production_new_forecast_tons}}</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">{{production_realised_units}}</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">{{production_realised_tons}}</p>
+                </div>
+                <div class="Cell">
+                    <p class="numba">{{prodcution_forecast_realisation}}</p>
                 </div>
                 <div class="Cell" contenteditable>
                     <p class="numba">1234</p>
@@ -106,27 +125,6 @@
                 </div>
                 <div class="Cell">
                     <p class="numba">1234</p>
-                </div>
-                <div class="Cell">
-                    <p class="numba">876</p>
-                </div>
-                <div class="Cell" contenteditable>
-                    <p class="numba">1234</p>
-                </div>
-                <div class="Cell">
-                    <p class="numba">1234</p>
-                </div>
-                <div class="Cell">
-                    <p class="numba">876</p>
-                </div>
-                <div class="Cell">
-                    <p class="numba">4563</p>
-                </div>
-                <div class="Cell">
-                    <p class="numba">1234</p>
-                </div>
-                <div class="Cell">
-                    <p class="numba">876</p>
                 </div>
             </div>
 
