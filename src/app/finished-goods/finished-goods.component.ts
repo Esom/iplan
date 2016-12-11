@@ -60,6 +60,7 @@ export class FinishedGoodsComponent implements OnInit {
 
     this.computeInventoryForecast();
     this.convertInventoryForecastToTons();
+    this.computeMonthlySupply();
   }
 
   convertProductionNewForecastUnitsToTons(units){
@@ -92,6 +93,7 @@ export class FinishedGoodsComponent implements OnInit {
     this.convertSalesNewForecastUnitsToTons(this.sales_new_forecast_units);
     this.computeSalesForecastRealisationPercentage();
     this.computeInventoryForecast();
+    this.computeMonthlySupply();
     // return this.sales_new_forecast_units;
   }
 
@@ -104,7 +106,7 @@ export class FinishedGoodsComponent implements OnInit {
 
   computeInventoryForecast(){
     this.inventory_forecast_units = this.production_new_forecast_units + this.previous_inventory_forecast_units - this.sales_new_forecast_units;
-    console.log("inventory forecast: " ,this.inventory_forecast_units);
+    this.computeMonthlySupply();
   }
 
   convertInventoryForecastToTons(){
