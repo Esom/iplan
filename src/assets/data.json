@@ -1,0 +1,86 @@
+{"Finished_Goods_Plan":[
+    {
+    	"month":"nov 2012",
+    	"sales_old_forecast_units":"",
+    	"sales_new_forecast_units":"7531",
+    	"production_old_forecast_units":"",
+    	"production_new_forecast_units":"10000"
+    },
+    {
+    	"month":"dec 2012",
+    	"sales_old_forecast_units":"",
+    	"sales_new_forecast_units":"7656",
+    	"production_old_forecast_units":"",
+    	"production_new_forecast_units":"7600"
+    },
+    {
+    	"month":"jan 2013",
+    	"sales_old_forecast_units":"7688",
+    	"sales_new_forecast_units":"8906",
+    	"production_old_forecast_units":"7700",
+    	"production_new_forecast_units":""
+    },
+    {
+    	"month":"feb 2013",
+    	"sales_old_forecast_units":"7906",
+    	"sales_new_forecast_units":"8906",
+    	"production_old_forecast_units":"8000",
+    	"production_new_forecast_units":"14000"
+    },
+    {
+    	"month":"mar 2013",
+    	"sales_old_forecast_units":"8156",
+    	"sales_new_forecast_units":"8906",
+    	"production_old_forecast_units":"8400",
+    	"production_new_forecast_units":"10000"
+    },
+    {
+    	"month":"apr 2013",
+    	"sales_old_forecast_units":"8406",
+    	"sales_new_forecast_units":"9063",
+    	"production_old_forecast_units":"8600",
+    	"production_new_forecast_units":"9000"
+    },
+    {
+    	"month":"may 2013",
+    	"sales_old_forecast_units":"8656",
+    	"sales_new_forecast_units":"9063",
+    	"production_old_forecast_units":"8800",
+    	"production_new_forecast_units":"9000"
+    },
+    {
+    	"month":"jun 2013",
+    	"sales_old_forecast_units":"8906",
+    	"sales_new_forecast_units":"9188",
+    	"production_old_forecast_units":"9100",
+    	"production_new_forecast_units":"9100"
+    },
+    {
+    	"month":"jul 2013",
+    	"sales_old_forecast_units":"9188",
+    	"sales_new_forecast_units":"9375",
+    	"production_old_forecast_units":"9300",
+    	"production_new_forecast_units":"9400"
+    },
+    {
+    	"month":"aug 2013",
+    	"sales_old_forecast_units":"9469",
+    	"sales_new_forecast_units":"9688",
+    	"production_old_forecast_units":"9700",
+    	"production_new_forecast_units":"9700"
+    },
+    {
+    	"month":"sep 2013",
+    	"sales_old_forecast_units":"9750",
+    	"sales_new_forecast_units":"9750",
+    	"production_old_forecast_units":"10000",
+    	"production_new_forecast_units":"10000"
+    },
+    {
+    	"month":"jul 2013",
+    	"sales_old_forecast_units":"10031",
+    	"sales_new_forecast_units":"10031",
+    	"production_old_forecast_units":"10200",
+    	"production_new_forecast_units":"10200"
+    }
+]}
