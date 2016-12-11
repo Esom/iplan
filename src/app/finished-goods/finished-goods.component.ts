@@ -9,6 +9,13 @@ import 'rxjs/add/operator/map';
   styleUrls: ['./finished-goods.component.css']
 })
 export class FinishedGoodsComponent implements OnInit {
+  fgp_months : Array<any> = ["Nov 2012","Dec 2012","Jan 2013","Feb 2013",
+                              "Mar 2013","Apr 2013","May 2013","Jun 2013","Jul 2013","Aug 2013","Sep 2013","Oct 2013"];
+  salesOldForecast: Array<any> = [0,0,7688,7906,8156,8406,8656,8906,9188,9469,9750,10031];
+  salesNewForecast: Array<any> = [7531,7656,8906,8906,8906,9063,9063,9188,9357,9688,9750,10031];
+  productionOldForecast: Array<any> = [0,0,7700,8000,8400,8600,8800,9100,9300,9700,10000,10200];
+  productionNewForecast: Array<any> = [10000,7600,0,14000,10000,9000,9100,9400,9700,10000,10200];
+
   fgp: Array<any> = undefined;
   private data: Object;
   private month: string = "nov 2012";
