@@ -20,8 +20,8 @@ export class FinishedGoodsComponent implements OnInit {
   @Input() private sales_old_forecast_units : number = 0;
   @Input() private sales_new_forecast_units : number = 7531;
   private sales_realised_units: number = 9281;
-  private sales_realised_tons: number;
-  private sales_forecast_realisation: number;
+  private sales_realised_tons: any;
+  private sales_forecast_realisation: any;
   private sales_new_forecast_tons : number;
 
   //production variables
@@ -29,13 +29,13 @@ export class FinishedGoodsComponent implements OnInit {
   @Input() private production_new_forecast_units : number = 10000;
   private production_realised_units: number = 11324;
   private production_realised_tons: number;
-  private production_forecast_realisation: number;
-  private production_new_forecast_tons : number;
+  private production_forecast_realisation: any;
+  private production_new_forecast_tons : any;
 
   //Inventory variables
   @Input() private inventory_forecast_units : number;
-  private inventory_new_forecast_tons : number;
-  private inventory_monthly_supply: number;
+  private inventory_new_forecast_tons : any;
+  private inventory_monthly_supply: any;
 
   constructor(private http: Http) {
 
@@ -64,28 +64,28 @@ export class FinishedGoodsComponent implements OnInit {
   }
 
   convertProductionNewForecastUnitsToTons(units){
-    this.production_new_forecast_tons = (this.production_new_forecast_units * this.item_weight)/1000;
+    this.production_new_forecast_tons = Math.round((this.production_new_forecast_units * this.item_weight)/1000);
     this.computeInventoryForecast();
   }
 
   convertSalesNewForecastUnitsToTons(units){
-    this.sales_new_forecast_tons = (this.sales_new_forecast_units * this.item_weight)/1000;
+    this.sales_new_forecast_tons = Math.round((this.sales_new_forecast_units * this.item_weight)/1000);
   }
 
   convertProductionRealisedUnitsToTons(units){
-    this.production_realised_tons = (this.production_realised_units * this.item_weight)/1000;
+    this.production_realised_tons = Math.round((this.production_realised_units * this.item_weight)/1000);
   }
 
   convertSalesRealisedUnitsToTons(units){
-    this.sales_realised_tons = (this.sales_realised_units * this.item_weight)/1000;
+    this.sales_realised_tons = Math.round((this.sales_realised_units * this.item_weight)/1000);
   }
 
   computeProductionForecastRealisationPercentage(){
-    this.production_forecast_realisation = (this.production_realised_units * 100)/this.production_new_forecast_units;
+    this.production_forecast_realisation = Math.round((this.production_realised_units * 100)/this.production_new_forecast_units);
   }
 
   computeSalesForecastRealisationPercentage(){
-    this.sales_forecast_realisation = (this.sales_realised_units * 100)/this.sales_new_forecast_units;
+    this.sales_forecast_realisation = Math.round((this.sales_realised_units * 100)/this.sales_new_forecast_units);
   }
 
   setSalesNewForecast(sales_new_forecast_units){
@@ -110,11 +110,11 @@ export class FinishedGoodsComponent implements OnInit {
   }
 
   convertInventoryForecastToTons(){
-    this.inventory_new_forecast_tons = (this.inventory_actual_units * this.item_weight)/1000;
+    this.inventory_new_forecast_tons = ((this.inventory_actual_units * this.item_weight)/1000).toFixed(0);
   }
 
   computeMonthlySupply(){
-    this.inventory_monthly_supply = this.inventory_forecast_units / this.sales_new_forecast_units;
+    this.inventory_monthly_supply = (this.inventory_forecast_units / this.sales_new_forecast_units).toFixed(2);
   }
 
   listData(data){
