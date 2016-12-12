@@ -48,7 +48,7 @@ export class FinishedGoodsComponent implements OnInit {
   private production_new_forecast_tons : any;
 
   //Inventory variables
-  @Input() private inventory_forecast_units : number;
+  private inventory_forecast_units : number;
   private inventory_new_forecast_tons : any;
   private inventory_monthly_supply: any;
 
@@ -59,27 +59,27 @@ export class FinishedGoodsComponent implements OnInit {
 
   ngOnInit() {
     //array compute methods
-    this.computeSalesNewForecastUnitsToTons(this.salesNewForecastUnits);
+    this.computeSalesNewForecastUnitsToTons();
     this.computeRealisedForecastUnitsToTons();
     this.computeSalesForecastRealisation()
     this.setComputedSalesNewForecast(this.units);
+
+
 
     this.setSalesNewForecast(this.sales_new_forecast_units);
     this.convertSalesNewForecastUnitsToTons();
     this.convertSalesRealisedUnitsToTons(this.sales_realised_units);
 
-    this.setProductionNewForecast(this.production_new_forecast_units)
+    this.setProductionNewForecast(this.production_new_forecast_units);
     this.convertProductionNewForecastUnitsToTons();
     this.convertProductionRealisedUnitsToTons(this.production_realised_units);
 
-    this.computeInventoryForecast();
     this.convertInventoryForecastToTons();
     this.computeMonthlySupply();
   }
 
   convertProductionNewForecastUnitsToTons(){
     this.production_new_forecast_tons = Math.round((this.production_new_forecast_units * this.item_weight)/1000);
-    this.computeInventoryForecast();
   }
 
   convertSalesNewForecastUnitsToTons(){
@@ -106,8 +106,8 @@ export class FinishedGoodsComponent implements OnInit {
     this.sales_new_forecast_units = sales_new_forecast_units;
     this.convertSalesNewForecastUnitsToTons();
     this.computeSalesForecastRealisationPercentage();
-    this.computeInventoryForecast();
     this.computeMonthlySupply();
+    this.computeInventoryForecast();
     // return this.sales_new_forecast_units;
   }
 
@@ -115,12 +115,13 @@ export class FinishedGoodsComponent implements OnInit {
     this.production_new_forecast_units = production_new_forecast_units;
     this.convertProductionNewForecastUnitsToTons();
     this.computeProductionForecastRealisationPercentage();
+    this.computeInventoryForecast();
       // return this.sales_new_forecast_units;
   }
 
   computeInventoryForecast(){
-    this.inventory_forecast_units = this.production_new_forecast_units + this.previous_inventory_forecast_units - this.sales_new_forecast_units;
-    this.computeMonthlySupply();
+    this.inventory_forecast_units = (this.previous_inventory_forecast_units) + (this.production_new_forecast_units - this.sales_new_forecast_units);
+    // this.computeMonthlySupply();
   }
 
   convertInventoryForecastToTons(){
@@ -138,7 +139,7 @@ export class FinishedGoodsComponent implements OnInit {
   }
 
   //compute arrays
-  computeSalesNewForecastUnitsToTons(salesNewForecastUnits){
+  computeSalesNewForecastUnitsToTons(){
     let length = 12;
     for(var i=0; i<length; i++ ){
       this.salesNewForecastTons[i] = Math.round((this.salesNewForecastUnits[i] * this.item_weight)/1000);
@@ -165,11 +166,10 @@ export class FinishedGoodsComponent implements OnInit {
   setComputedSalesNewForecast(salesNewForecastUnits){
     let length = 12;
     for(var i=0; i<length; i++ ){
-      this.salesNewForecastTons[i] = Math.round((this.salesNewForecastUnits[i] * this.item_weight)/1000);
-      this.computeSalesForecastRealisationPercentage();
-      console.log("setter sales forecast", this.salesNewForecastTons[i]);
+      salesNewForecastUnits = this.salesNewForecastUnits[i];
+      this.salesNewForecastTon = Math.round((this.salesNewForecastUnits[i] * this.item_weight)/1000);
+      console.log("setter sales forecast", this.salesNewForecastTon);
     }
-    console.log("setter sales forecast", this.salesNewForecastTons);
   }
 
 }
