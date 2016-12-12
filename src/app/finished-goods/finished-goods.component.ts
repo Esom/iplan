@@ -11,6 +11,7 @@ import 'rxjs/add/operator/map';
 export class FinishedGoodsComponent implements OnInit {
   fgp_months : Array<any> = ["Nov 2012","Dec 2012","Jan 2013","Feb 2013",
                               "Mar 2013","Apr 2013","May 2013","Jun 2013","Jul 2013","Aug 2013","Sep 2013","Oct 2013"];
+
   @Input() private units = 0;
   @Input() private salesOldForecastUnits: Array<any> = [0,0,7688,7906,8156,8406,8656,8906,9188,9469,9750,10031];
   @Input() private salesNewForecastUnits: Array<any> = [7531,7656,8906,8906,8906,9063,9063,9188,9357,9688,9750,10031];
@@ -18,11 +19,16 @@ export class FinishedGoodsComponent implements OnInit {
   private salesRealisedUnits: Array<any> = [9281,9974,11081,8219];
   private salesRealisedToTons: Array<any> = [];
   private salesForecastRealisation: Array<any> = [];
-  salesNewForecastTon: number = 0;
+  private salesNewForecastTon: number = 0;
 
 
   @Input() private productionOldForecastUnits: Array<any> = [0,0,7700,8000,8400,8600,8800,9100,9300,9700,10000,10200];
-  @Input() private productionNewForecastUnits: Array<any> = [10000,7600,0,14000,10000,9000,9100,9400,9700,10000,10200];
+  @Input() private productionNewForecastUnits: Array<any> = [10000,7600,0,14000,10000,9000,9000,9100,9400,9700,10000,10200];
+  private productionNewForecastTons: Array<any> = [];
+  private productionRealisedUnits: Array<any> = [11324,9875,9358,8022];
+  private productionRealisedToTons: Array<any> = [];
+  private productionForecastRealisation: Array<any> = [];
+  private productionNewForecastTon: number = 0;
 
   fgp: Array<any> = undefined;
   private data: Object;
@@ -60,11 +66,11 @@ export class FinishedGoodsComponent implements OnInit {
   ngOnInit() {
     //array compute methods
     this.computeSalesNewForecastUnitsToTons();
-    this.computeRealisedForecastUnitsToTons();
-    this.computeSalesForecastRealisation()
-    this.setComputedSalesNewForecast(this.salesNewForecastUnits);
-
-
+    this.computeSalesRealisedUnitsToTons();
+    this.computeSalesForecastRealisation();
+    this.computeProductionNewForecastUnitsToTons();
+    this.computeProductionRealisedUnitsToTons();
+    this.computeProductionForecastRealisation()
 
     this.setSalesNewForecast(this.sales_new_forecast_units);
     this.convertSalesNewForecastUnitsToTons();
@@ -147,10 +153,26 @@ export class FinishedGoodsComponent implements OnInit {
     }
   }
 
-  computeRealisedForecastUnitsToTons(){
+  computeProductionNewForecastUnitsToTons(){
+    let length = 12;
+    for(var i=0; i<length; i++ ){
+      this.productionNewForecastTons[i] = Math.round((this.productionNewForecastUnits[i] * this.item_weight)/1000);
+      // console.log("computed sales," ,this.salesNewForecastTons[i]);
+    }
+  }
+
+  computeSalesRealisedUnitsToTons(){
     let length = 12;
     for(var i=0; i<length; i++ ){
       this.salesRealisedToTons[i] = Math.round((this.salesRealisedUnits[i] * this.item_weight)/1000 || 0);
+      // console.log("computed sales," ,this.salesRealisedToTons[i]);
+    }
+  }
+
+  computeProductionRealisedUnitsToTons(){
+    let length = 12;
+    for(var i=0; i<length; i++ ){
+      this.productionRealisedToTons[i] = Math.round((this.productionRealisedUnits[i] * this.item_weight)/1000 || 0);
       // console.log("computed sales," ,this.salesRealisedToTons[i]);
     }
   }
@@ -163,12 +185,26 @@ export class FinishedGoodsComponent implements OnInit {
     }
   }
 
-  setComputedSalesNewForecast(salesNewForecastUnits){
+  computeProductionForecastRealisation(){
+    let length = 12;
     for(var i=0; i<length; i++ ){
-      this.salesNewForecastUnits[i] =salesNewForecastUnits;
-      this.salesNewForecastTon = Math.round((this.salesNewForecastUnits[i] * this.item_weight)/1000);
-      console.log("setter sales forecast", this.salesNewForecastTon);
+      this.productionForecastRealisation[i] = Math.round((this.productionRealisedUnits[i] * 100)/this.productionNewForecastUnits[i] || 0);
+      // console.log("computed forecast realisation," ,this.salesForecastRealisation[i]);
     }
+  }
+
+  setComputedSalesNewForecast(salesNewForecastUnits, i) {
+    console.log("index", i);
+    this.salesNewForecastUnits[i] = salesNewForecastUnits;
+    this.salesNewForecastTons[i] = Math.round((salesNewForecastUnits * this.item_weight)/1000);
+    console.log("setter sales forecast", this.salesNewForecastTon);
+  }
+
+  setComputedProductionNewForecast(productionNewForecastUnits, i) {
+    console.log("index", i);
+    this.productionNewForecastUnits[i] = productionNewForecastUnits;
+    this.productionNewForecastTons[i] = Math.round((productionNewForecastUnits * this.item_weight)/1000);
+    console.log("setter production forecast", this.productionNewForecastTon);
   }
 
 }

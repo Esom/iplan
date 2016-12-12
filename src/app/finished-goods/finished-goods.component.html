@@ -176,7 +176,6 @@
                     border: none;
                     padding: 0;
                 }
-
                 .tables{background:None;}
                 .tables ul{float:left;margin:0px;padding:0px;}
                 .tables ul li{list-style:none;padding:4px 9px;}
@@ -184,8 +183,9 @@
                 .tables ul li.even{background:#fff;}
                 .tables ul li.odd{background:#FFFFE6;}
                 b.fgp_title {font-size: 11px;}
+                .tables ul li{font-size: 11px;}
             </style>
-
+            <h2>Sales</h2>
             <div class="tables">
                 <ul>
                     <li><b class="fgp_title">Month</b></li>
@@ -197,14 +197,14 @@
                 </ul>
                 <ul>
                     <li><b class="fgp_title">New Forecast[units]</b></li>
-                    <li contenteditable *ngFor="let sales of salesNewForecastUnits">
-                        <input [value]="sales" type="number" (input)="setComputedSalesNewForecast($event.target.value)" >
+                    <li contenteditable *ngFor="let sales of salesNewForecastUnits; let i = index" >
+                        <input [value]="sales" type="number" (input)="setComputedSalesNewForecast($event.target.value, i)" >
                     </li>
                 </ul>
                 <ul>
                     <li><b class="fgp_title">New Forecast[tons]</b></li>
-                    <li>{{salesNewForecastTon}}</li>
-                    <!-- <li *ngFor="let tons of salesRealisedToTon">{{tons}}</li> -->
+                    <!-- <li>{{salesNewForecastTon}}</li> -->
+                    <li *ngFor="let tons of salesNewForecastTons">{{tons}}</li>
                 </ul>
                 <ul>
                     <li><b class="fgp_title">Realised[Units]</b></li>
@@ -217,6 +217,61 @@
                 <ul>
                     <li><b class="fgp_title">Forecast Realisation[%]</b></li>
                     <li *ngFor="let realised of salesForecastRealisation">{{realised}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="col-sm-12">
+        <div>
+            <style>
+                input[type="number"] {
+                    border: none;
+                    padding: 0;
+                }
+                .tables{background:None;}
+                .tables ul{float:left;margin:0px;padding:0px;}
+                .tables ul li{list-style:none;padding:4px 9px;}
+                .tables ul li.title{font-weight:bold;background:#333;color:#fff;}
+                .tables ul li.even{background:#fff;}
+                .tables ul li.odd{background:#FFFFE6;}
+                b.fgp_title {font-size: 11px;}
+                .tables ul li{font-size: 11px;}
+            </style>
+            <h2>Production</h2>
+            <div class="tables">
+                <ul>
+                    <li><b class="fgp_title">Month</b></li>
+                    <li *ngFor="let month of fgp_months">{{month}}</li>
+                </ul>
+                <ul>
+                    <li><b class="fgp_title">Old Forecast[units]</b></li>
+                    <li contenteditable *ngFor="let old of productionOldForecastUnits"><input [value]="old" type="number"></li>
+                </ul>
+                <ul>
+                    <li><b class="fgp_title">New Forecast[units]</b></li>
+                    <li contenteditable *ngFor="let sales of productionNewForecastUnits; let i = index" >
+                        <input [value]="sales" type="number" (input)="setComputedProductionNewForecast($event.target.value, i)" >
+                    </li>
+                </ul>
+                <ul>
+                    <li><b class="fgp_title">New Forecast[tons]</b></li>
+                    <!-- <li>{{salesNewForecastTon}}</li> -->
+                    <li *ngFor="let tons of productionNewForecastTons">{{tons}}</li>
+                </ul>
+                <ul>
+                    <li><b class="fgp_title">Realised[Units]</b></li>
+                    <li *ngFor="let realised of productionRealisedUnits">{{realised}}</li>
+                </ul>
+                <ul>
+                    <li><b class="fgp_title">Realised[Tons]</b></li>
+                    <li *ngFor="let tons of productionRealisedToTons">{{tons}}</li>
+                </ul>
+                <ul>
+                    <li><b class="fgp_title">Forecast Realisation[%]</b></li>
+                    <li *ngFor="let realised of productionForecastRealisation">{{realised}}</li>
                 </ul>
             </div>
         </div>
