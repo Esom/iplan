@@ -14,9 +14,9 @@ export class FinishedGoodsComponent implements OnInit {
   @Input() private units = 0;
   @Input() private salesOldForecastUnits: Array<any> = [0,0,7688,7906,8156,8406,8656,8906,9188,9469,9750,10031];
   @Input() private salesNewForecastUnits: Array<any> = [7531,7656,8906,8906,8906,9063,9063,9188,9357,9688,9750,10031];
+  private salesNewForecastTons: Array<any> = [];
   private salesRealisedUnits: Array<any> = [9281,9974,11081,8219];
   private salesRealisedToTons: Array<any> = [];
-  private salesNewForecastTons: Array<any> = [];
   private salesForecastRealisation: Array<any> = [];
   salesNewForecastTon: number = 0;
 
@@ -62,7 +62,7 @@ export class FinishedGoodsComponent implements OnInit {
     this.computeSalesNewForecastUnitsToTons();
     this.computeRealisedForecastUnitsToTons();
     this.computeSalesForecastRealisation()
-    this.setComputedSalesNewForecast(this.units);
+    this.setComputedSalesNewForecast(this.salesNewForecastUnits);
 
 
 
@@ -164,9 +164,8 @@ export class FinishedGoodsComponent implements OnInit {
   }
 
   setComputedSalesNewForecast(salesNewForecastUnits){
-    let length = 12;
     for(var i=0; i<length; i++ ){
-      salesNewForecastUnits = this.salesNewForecastUnits[i];
+      this.salesNewForecastUnits[i] =salesNewForecastUnits;
       this.salesNewForecastTon = Math.round((this.salesNewForecastUnits[i] * this.item_weight)/1000);
       console.log("setter sales forecast", this.salesNewForecastTon);
     }
