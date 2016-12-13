@@ -154,7 +154,7 @@ export class FinishedGoodsComponent implements OnInit {
     this.inventory_monthly_supply = (this.inventory_forecast_units / this.sales_new_forecast_units).toFixed(2);
   }
 
-  //compute arrays
+  //compute indexing functionality
   computeSalesNewForecastUnitsToTons(){
     let length = 12;
     for(var i=0; i<length; i++ ){
@@ -212,7 +212,7 @@ export class FinishedGoodsComponent implements OnInit {
           this.inventoryForecastUnits[a] = this.inventoryActualUnits[i];
           console.log("computed null rule inventory",this.inventoryForecastUnits[a]);
       }else{
-          this.inventoryForecastUnits[a+1] = (this.inventoryActualUnits[a-1]) + (this.productionNewForecastUnits[a] - this.salesNewForecastUnits[a]);
+          this.inventoryForecastUnits[a] = (this.inventoryActualUnits[a-1]) + (this.productionNewForecastUnits[a] - this.salesNewForecastUnits[a]);
           console.log("index:"+ a +" computed inventory" + this.inventoryActualUnits[a-1]);
       }
     }
@@ -244,7 +244,8 @@ export class FinishedGoodsComponent implements OnInit {
     this.salesNewForecastUnits[i] = salesNewForecastUnits;
     this.salesNewForecastTons[i] = Math.round((salesNewForecastUnits * this.item_weight)/1000);
     this.salesForecastRealisation[i] = Math.round((this.salesRealisedUnits[i] * 100)/this.salesNewForecastUnits[i] || 0);
-    this.inventoryMonthlySupply[i] = (this.inventoryForecastUnits[i] / this.salesNewForecastUnits[i+1]).toFixed(2)
+    this.inventoryMonthlySupply[i] = (this.inventoryForecastUnits[i] / this.salesNewForecastUnits[i+1]).toFixed(2);
+    this.calcInventoryForecastUnits(i);
     console.log("setter sales forecast", this.salesNewForecastTon);
   }
 
